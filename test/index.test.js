@@ -52,7 +52,7 @@ describe('DOM Testing and User Behavior Simulation', () => {
   })
 
   it('should display an error message for empty input', () => {
-    handleFormSubmit('user-form', 'dynamic-content')
+    handleFormSubmit({ preventDefault: () => {} })
     const errorMessage = document.getElementById('error-message')
     expect(errorMessage.textContent).toBe('Input cannot be empty')
     expect(errorMessage.classList.contains('hidden')).toBe(false)
